@@ -1,0 +1,1446 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ground_ops_clean_sql' inline='true' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ground_ops_clean_sql' name='textscan.1uflwd51r32u1m12ugo3v1g0evos'>
+            <connection class='textscan' directory='/Users/davidnamgung/portfolio-projects/safety_ground_ops_engine/data/processed' filename='ground_ops_clean_sql.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1uflwd51r32u1m12ugo3v1g0evos' name='ground_ops_clean_sql.csv' table='[ground_ops_clean_sql#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+            <column datatype='integer' name='audit_id' ordinal='0' />
+            <column datatype='datetime' name='flight_date' ordinal='1' />
+            <column datatype='string' name='station_code' ordinal='2' />
+            <column datatype='string' name='handler_name' ordinal='3' />
+            <column datatype='integer' name='turnaround_target_mins' ordinal='4' />
+            <column datatype='integer' name='turnaround_actual_mins' ordinal='5' />
+            <column datatype='integer' name='turnaround_variance_mins' ordinal='6' />
+            <column datatype='boolean' name='is_on_time' ordinal='7' />
+            <column datatype='integer' name='baggage_delay_mins' ordinal='8' />
+            <column datatype='boolean' name='safety_incident_flag' ordinal='9' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_CA&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>audit_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[audit_id]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>audit_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>flight_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[flight_date]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>flight_date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>station_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[station_code]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>station_code</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>handler_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[handler_name]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>handler_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>turnaround_target_mins</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[turnaround_target_mins]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>turnaround_target_mins</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>turnaround_actual_mins</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[turnaround_actual_mins]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>turnaround_actual_mins</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>turnaround_variance_mins</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[turnaround_variance_mins]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>turnaround_variance_mins</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_on_time</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_on_time]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>is_on_time</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>baggage_delay_mins</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[baggage_delay_mins]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>baggage_delay_mins</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>safety_incident_flag</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[safety_incident_flag]</local-name>
+            <parent-name>[ground_ops_clean_sql.csv]</parent-name>
+            <remote-alias>safety_incident_flag</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Box' datatype='string' name='[Calculation_426153172348035072]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot;&quot;' />
+      </column>
+      <column caption='Global Incident Rate' datatype='real' name='[Calculation_426153172354965506]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [safety_incident_flag] = TRUE THEN 1 ELSE 0 END) &#10;/ &#10;COUNT([audit_id])' />
+      </column>
+      <column caption='Incident Rate Alert' datatype='boolean' name='[Calculation_426153172355264515]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='[Calculation_426153172354965506] &gt; 0.025' />
+      </column>
+      <column caption='On-Time Performance' datatype='real' name='[Calculation_426153172356546564]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [is_on_time] = TRUE THEN 1 ELSE 0 END) / COUNT([audit_id])' />
+      </column>
+      <column caption='Late Performance' datatype='real' name='[Calculation_426153172357607430]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [is_on_time] = FALSE THEN 1 ELSE 0 END) &#10;/ &#10;COUNT([audit_id])' />
+      </column>
+      <column aggregation='None' caption='Variance Bins' datatype='integer' name='[Turnaround Variance Mins (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='1' formula='[turnaround_variance_mins]' peg='0' size='10' />
+      </column>
+      <column caption='ground_ops_clean_sql.csv' datatype='table' name='[__tableau_internal_object_id__].[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]' role='measure' type='quantitative' />
+      <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+      <column caption='Baggage Delay Mins' datatype='integer' name='[baggage_delay_mins]' role='measure' type='quantitative' />
+      <column caption='Flight Date' datatype='datetime' name='[flight_date]' role='dimension' type='ordinal' />
+      <column caption='Handler Name' datatype='string' name='[handler_name]' role='dimension' type='nominal' />
+      <column caption='Is On Time' datatype='boolean' name='[is_on_time]' role='dimension' type='nominal' />
+      <column caption='Safety Incident Flag' datatype='boolean' name='[safety_incident_flag]' role='dimension' type='nominal' />
+      <column caption='Station Code' datatype='string' name='[station_code]' role='dimension' type='nominal' />
+      <column caption='Turnaround Actual Mins' datatype='integer' name='[turnaround_actual_mins]' role='measure' type='quantitative' />
+      <column caption='Turnaround Target Mins' datatype='integer' name='[turnaround_target_mins]' role='measure' type='quantitative' />
+      <column caption='Turnaround Variance Mins' datatype='integer' name='[turnaround_variance_mins]' role='measure' type='quantitative' />
+      <column-instance column='[audit_id]' derivation='Count' name='[cnt:audit_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_426153172354965506]' derivation='User' name='[cum:usr:Calculation_426153172354965506:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+      </column-instance>
+      <column-instance column='[station_code]' derivation='None' name='[none:station_code:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_426153172354965506]' derivation='User' name='[usr:Calculation_426153172354965506:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/xn/r814p3hs3bz26n63nmyc18lw0000gn/T/tableau-temp/#TableauTemp_19j5kas0ccb9m415jlriq07yjv55.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/08/2026 06:15:54 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>audit_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[audit_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>audit_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>98750</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>flight_date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[flight_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>flight_date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>887</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>station_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[station_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>station_code</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>handler_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[handler_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>handler_name</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>turnaround_target_mins</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[turnaround_target_mins]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>turnaround_target_mins</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>turnaround_actual_mins</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[turnaround_actual_mins]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>turnaround_actual_mins</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>153</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>turnaround_variance_mins</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[turnaround_variance_mins]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>turnaround_variance_mins</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>249</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_on_time</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[is_on_time]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_on_time</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>baggage_delay_mins</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[baggage_delay_mins]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>baggage_delay_mins</remote-alias>
+              <ordinal>8</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>54</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>safety_incident_flag</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[safety_incident_flag]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>safety_incident_flag</remote-alias>
+              <ordinal>9</ordinal>
+              <family>ground_ops_clean_sql.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cnt:audit_id:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172354965506:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:station_code:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;DXB&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;NRT&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;LHR&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;YUL&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;JFK&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;SIN&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;FRA&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='ground_ops_clean_sql.csv' id='ground_ops_clean_sql.csv_AB033ED4E8034EC98BF0DD74CAB16DB3'>
+            <properties context=''>
+              <relation connection='textscan.1uflwd51r32u1m12ugo3v1g0evos' name='ground_ops_clean_sql.csv' table='[ground_ops_clean_sql#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+                  <column datatype='integer' name='audit_id' ordinal='0' />
+                  <column datatype='datetime' name='flight_date' ordinal='1' />
+                  <column datatype='string' name='station_code' ordinal='2' />
+                  <column datatype='string' name='handler_name' ordinal='3' />
+                  <column datatype='integer' name='turnaround_target_mins' ordinal='4' />
+                  <column datatype='integer' name='turnaround_actual_mins' ordinal='5' />
+                  <column datatype='integer' name='turnaround_variance_mins' ordinal='6' />
+                  <column datatype='boolean' name='is_on_time' ordinal='7' />
+                  <column datatype='integer' name='baggage_delay_mins' ordinal='8' />
+                  <column datatype='boolean' name='safety_incident_flag' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Geospatial Risk Map'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#ffffff'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>This map visualizes safety compliance across our global ground handling network. By plotting the aggregate incident rate against total flight volume, it identifies geographical risk zones. This intelligence enables the central operations team to move away from random inspections and intelligently deploy safety auditors to high-risk hubs.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column caption='Global Incident Rate' datatype='real' name='[Calculation_426153172354965506]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [safety_incident_flag] = TRUE THEN 1 ELSE 0 END) &#10;/ &#10;COUNT([audit_id])' />
+            </column>
+            <column-instance column='[station_code]' derivation='Attribute' name='[attr:station_code:nk]' pivot='key' type='nominal' />
+            <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+            <column-instance column='[audit_id]' derivation='Count' name='[cnt:audit_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_426153172354965506]' derivation='User' name='[cum:usr:Calculation_426153172354965506:qk]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+            </column-instance>
+            <column-instance column='[station_code]' derivation='None' name='[none:station_code:nk]' pivot='key' type='nominal' />
+            <column caption='Safety Incident Flag' datatype='boolean' name='[safety_incident_flag]' role='dimension' type='nominal' />
+            <column caption='Station Code' datatype='string' name='[station_code]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_426153172354965506]' derivation='User' name='[usr:Calculation_426153172354965506:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;SIN&quot;</bucket>
+              <bucket>&quot;JFK&quot;</bucket>
+              <bucket>&quot;LHR&quot;</bucket>
+              <bucket>&quot;DXB&quot;</bucket>
+              <bucket>&quot;FRA&quot;</bucket>
+              <bucket>&quot;YUL&quot;</bucket>
+              <bucket>&quot;NRT&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172354965506:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]' num-steps='4' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-diverging'>
+                <color>#3058af</color>
+                <color>#3c62b2</color>
+                <color>#4a6cb6</color>
+                <color>#5877ba</color>
+                <color>#6682be</color>
+                <color>#758dc2</color>
+                <color>#8499c5</color>
+                <color>#94a5c9</color>
+                <color>#a4b1cd</color>
+                <color>#b5bed1</color>
+                <color>#c7cbd5</color>
+                <color>#d9d9d9</color>
+                <color>#d3c0c2</color>
+                <color>#cda8ac</color>
+                <color>#c89196</color>
+                <color>#c27b82</color>
+                <color>#bd676f</color>
+                <color>#b7535d</color>
+                <color>#b2404b</color>
+                <color>#ac2f3b</color>
+                <color>#a71e2b</color>
+                <color>#a10e1c</color>
+                <color>#9c000f</color>
+              </color-palette>
+            </encoding>
+            <encoding attr='color' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172354965506:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='dark' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cnt:audit_id:qk]' />
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]' />
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' />
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172354965506:qk]' />
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cnt:audit_id:qk]' />
+              <lod column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[attr:station_code:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{A59BA782-F589-473C-947D-99A3DFB73278}' />
+    </worksheet>
+    <worksheet name='KPI - Average Turnaround Variance'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>AVG Turnaround Variance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column-instance column='[turnaround_variance_mins]' derivation='Avg' name='[avg:turnaround_variance_mins:qk]' pivot='key' type='quantitative' />
+            <column caption='Turnaround Variance Mins' datatype='integer' name='[turnaround_variance_mins]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='14' />
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_variance_mins:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{6A2A924B-FC54-4430-8BE9-EBAA9FEC9ACE}' />
+    </worksheet>
+    <worksheet name='KPI - Global Incident Rate'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#ffffff' fontsize='10'>Global Incident Rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column caption='Global Incident Rate' datatype='real' name='[Calculation_426153172354965506]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [safety_incident_flag] = TRUE THEN 1 ELSE 0 END) &#10;/ &#10;COUNT([audit_id])' />
+            </column>
+            <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+            <column caption='Safety Incident Flag' datatype='boolean' name='[safety_incident_flag]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_426153172354965506]' derivation='User' name='[usr:Calculation_426153172354965506:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='14' />
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{7A81D838-FE28-4771-9676-9A3E6B5D7163}' />
+    </worksheet>
+    <worksheet name='KPI - Late Performance'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>Late Performance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column caption='Late Performance' datatype='real' name='[Calculation_426153172357607430]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [is_on_time] = FALSE THEN 1 ELSE 0 END) &#10;/ &#10;COUNT([audit_id])' />
+            </column>
+            <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_426153172357607430]' derivation='User' name='[cum:usr:Calculation_426153172357607430:qk]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+            </column-instance>
+            <column caption='Is On Time' datatype='boolean' name='[is_on_time]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172357607430:qk]' value='p0.00%' />
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='12' />
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172357607430:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <percentages enabled='true' mode='pane' />
+      </table>
+      <simple-id uuid='{9F71D42C-59F8-4B0E-B082-90FCF3662A3B}' />
+    </worksheet>
+    <worksheet name='KPI - On-Time Performance'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>On-Time Performance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column caption='On-Time Performance' datatype='real' name='[Calculation_426153172356546564]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [is_on_time] = TRUE THEN 1 ELSE 0 END) / COUNT([audit_id])' />
+            </column>
+            <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_426153172356546564]' derivation='User' name='[cum:usr:Calculation_426153172356546564:qk]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+            </column-instance>
+            <column caption='Is On Time' datatype='boolean' name='[is_on_time]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172356546564:qk]' value='p0.00%' />
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='12' />
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cum:usr:Calculation_426153172356546564:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <percentages enabled='true' mode='pane' />
+      </table>
+      <simple-id uuid='{41D53CA8-8A71-4EAE-9FF3-E6D5EA47983A}' />
+    </worksheet>
+    <worksheet name='KPI - Total Turnarounds'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff' fontsize='10'>Total Turnaround</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+            <column-instance column='[audit_id]' derivation='Count' name='[cnt:audit_id:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='14' />
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cnt:audit_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{68F04CBE-7BB7-4D55-BAFF-92279B8A9B2A}' />
+    </worksheet>
+    <worksheet name='Speed-Safety Paradox'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#ffffff'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>This dual-axis analysis contrasts turnaround volume against safety incident frequency. The data reveals a critical operational insight: a distinct &quot;Risk Spike&quot; occurs on the left side of the distribution. It proves that when ground crews are rushed and forced into a negative variance state to beat their targets, the probability of severe safety protocol breaches increases significantly.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column caption='Global Incident Rate' datatype='real' name='[Calculation_426153172354965506]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [safety_incident_flag] = TRUE THEN 1 ELSE 0 END) &#10;/ &#10;COUNT([audit_id])' />
+            </column>
+            <column aggregation='None' caption='Variance Bins' datatype='integer' name='[Turnaround Variance Mins (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='1' formula='[turnaround_variance_mins]' peg='0' size='10' />
+            </column>
+            <column caption='Audit Id' datatype='integer' name='[audit_id]' role='dimension' type='ordinal' />
+            <column-instance column='[audit_id]' derivation='Count' name='[cnt:audit_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Turnaround Variance Mins (bin)]' derivation='None' name='[none:Turnaround Variance Mins (bin):ok]' pivot='key' type='ordinal' />
+            <column caption='Safety Incident Flag' datatype='boolean' name='[safety_incident_flag]' role='dimension' type='nominal' />
+            <column caption='Turnaround Variance Mins' datatype='integer' name='[turnaround_variance_mins]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_426153172354965506]' derivation='User' name='[usr:Calculation_426153172354965506:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#ffffff' />
+            <format attr='font-family' value='Tableau Light' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[cnt:audit_id:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[:Measure Names]' />
+              <text column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.15j3zxi0yfz8jv14vfa3t0760vln].[cnt:audit_id:qk] + [federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk])</rows>
+        <cols>[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:Turnaround Variance Mins (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.15j3zxi0yfz8jv14vfa3t0760vln].[Turnaround Variance Mins (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{5FED2F66-187F-4150-BA1E-1A6C5254A659}' />
+    </worksheet>
+    <worksheet name='Target vs Actual'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Target vs. Actual</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ground_ops_clean_sql' name='federated.15j3zxi0yfz8jv14vfa3t0760vln' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15j3zxi0yfz8jv14vfa3t0760vln'>
+            <column-instance column='[turnaround_actual_mins]' derivation='Avg' name='[avg:turnaround_actual_mins:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[turnaround_target_mins]' derivation='Avg' name='[avg:turnaround_target_mins:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[station_code]' derivation='None' name='[none:station_code:nk]' pivot='key' type='nominal' />
+            <column caption='Station Code' datatype='string' name='[station_code]' role='dimension' type='nominal' />
+            <column caption='Turnaround Actual Mins' datatype='integer' name='[turnaround_actual_mins]' role='measure' type='quantitative' />
+            <column caption='Turnaround Target Mins' datatype='integer' name='[turnaround_target_mins]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='color' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_actual_mins:qk]' value='#ffffff' />
+            <format attr='color' field='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='color' id='refline1' value='#e9000a' />
+            <format attr='font-size' id='refline1' value='10' />
+            <format attr='background-color' id='refline1' value='#e9000a' />
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='stroke-color' id='refline0' value='#e9000a' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='palette' id='refline1' value='rf_gray65' />
+            <format attr='stroke-color' id='refline1' value='#e9000a' />
+            <format attr='line-visibility' id='refline1' value='on' />
+            <format attr='line-pattern-only' id='refline1' value='solid' />
+            <format attr='reverse-palette' id='refline1' value='false' />
+            <format attr='stroke-size' id='refline1' value='3' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' />
+              <lod column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_target_mins:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_actual_mins:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' />
+              <lod column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_target_mins:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_target_mins:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' />
+              <lod column='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_target_mins:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_actual_mins:qk] + [federated.15j3zxi0yfz8jv14vfa3t0760vln].[avg:turnaround_target_mins:qk])</rows>
+        <cols>[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]</cols>
+      </table>
+      <simple-id uuid='{61194C14-9BDB-4B4D-ADCF-C010E304E3FD}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1280' minheight='800' minwidth='1280' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='3' is-centered='0' type-v2='bitmap' w='98750' x='625' y='1000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='100000' id='5' is-centered='0' is-scaled='1' param='/Users/davidnamgung/Downloads/Black Modern Dark Performance Dashboard Website Prototype.png' type-v2='bitmap' w='100000' x='0' y='0' />
+        <zone h='12875' id='6' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='55391' x='2891' y='17625'>
+          <zone h='12875' id='7' name='KPI - Total Turnarounds' w='11093' x='2891' y='17625'>
+            <layout-cache fixed-size-h='235' type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='12875' id='8' name='KPI - Global Incident Rate' w='11094' x='13984' y='17625'>
+            <layout-cache type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='12875' id='9' name='KPI - Average Turnaround Variance' w='11094' x='25078' y='17625'>
+            <layout-cache type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='12875' id='10' name='KPI - On-Time Performance' w='11094' x='36172' y='17625'>
+            <layout-cache type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='329' h='12875' id='11' is-fixed='true' name='KPI - Late Performance' w='11015' x='47266' y='17625'>
+            <layout-cache type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='31250' id='12' name='Geospatial Risk Map' w='34297' x='61641' y='18125' />
+        <zone h='58250' id='13' name='Speed-Safety Paradox' w='55156' x='3047' y='34375' />
+        <zone forceUpdate='true' h='35750' id='14' type-v2='text' w='34375' x='61563' y='55125'>
+          <formatted-text>
+            <run fontcolor='#ffffff' fontname='Tableau Light' fontsize='11'>This map visualizes safety compliance across our global ground handling network. By plotting the aggregate incident rate against total flight volume, it identifies geographical risk zones. This intelligence enables the central operations team to move away from random inspections and intelligently deploy safety auditors to high-risk hubs.</run>
+            <run>Æ&#10;&#10;</run>
+            <run fontcolor='#ffffff' fontname='Tableau Light' fontsize='11'>This dual-axis analysis contrasts turnaround volume against safety incident frequency. The data reveals a critical operational insight: a distinct &quot;Risk Spike&quot; occurs on the left side of the distribution. It proves that when ground crews are rushed and forced into a negative variance state to beat their targets, the probability of severe safety protocol breaches increases significantly.</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='12250' id='15' type-v2='text' w='38828' x='4141' y='2875'>
+          <formatted-text>
+            <run fontcolor='#ffffff' fontname='Tableau Bold' fontsize='22'>Safety Ground Ops &amp; Audit Engine</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='' h='33250' id='16' type-v2='web' w='33281' x='44922' y='4500' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{70C8955B-B0C0-4E99-9FD6-CA687DA5882A}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='KPI - Total Turnarounds'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{33AD0DF9-AEB6-4BB7-B646-6D0E8C14FC4C}' />
+    </window>
+    <window class='worksheet' name='KPI - Global Incident Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C1C3BAF7-3D18-4F6F-967A-A4C9B0F3CF1D}' />
+    </window>
+    <window class='worksheet' name='KPI - Average Turnaround Variance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D66A0B05-5E42-4327-BC85-3103E4E9831F}' />
+    </window>
+    <window class='worksheet' name='KPI - On-Time Performance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{28D28207-83EF-41DA-919F-38A2B4C2846A}' />
+    </window>
+    <window class='worksheet' name='KPI - Late Performance'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D434BA22-228B-42F3-B86F-9CA98B073CDF}' />
+    </window>
+    <window class='worksheet' name='Geospatial Risk Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[usr:Calculation_426153172354965506:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{6C52EC95-4354-4CF4-BFE1-1BCEF0E2B5CE}' />
+    </window>
+    <window class='worksheet' name='Speed-Safety Paradox'>
+      <cards>
+        <edge name='left'>
+          <strip size='234'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card pane-specification-id='1' param='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{62FA94DF-0753-45AA-B1B2-FF973DF489E6}' />
+    </window>
+    <window class='worksheet' name='Target vs Actual'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.15j3zxi0yfz8jv14vfa3t0760vln].[none:station_code:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FB85EE4B-BAB8-4B92-B2F1-5D38E42262EF}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Geospatial Risk Map'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI - Average Turnaround Variance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI - Global Incident Rate'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI - Late Performance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI - On-Time Performance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI - Total Turnarounds'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Speed-Safety Paradox'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='16' />
+      <simple-id uuid='{58D251AD-D009-45BC-B9E8-E45AC49B21CD}' />
+    </window>
+  </windows>
+</workbook>
