@@ -1,5 +1,5 @@
 ---
-title: "IATA Ground Ops: Safety & Compliance Engine"
+title: "Ground Ops: Safety & Compliance Engine"
 subtitle: "Full-Stack Data Analysis and Data Engineering: Python Ingestion, SQL ETL, and R Automated Alerting System"
 author: "David Namgung"
 date: today
