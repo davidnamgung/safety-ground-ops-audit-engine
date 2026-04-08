@@ -4,11 +4,6 @@ subtitle: "Full-Stack Data Analysis and Data Engineering: Python Ingestion, SQL 
 author: "David Namgung"
 date: today
 format:
-  pdf:
-    toc: true
-    colorlinks: true
-    geometry:
-      - margin=1in
   html:
     # --- Aesthetics & Typography ---
     theme: cosmo
