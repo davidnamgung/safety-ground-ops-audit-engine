@@ -6,6 +6,9 @@
     <AccessibleZoneTabOrder />
     <AnimationOnByDefault />
     <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <DashboardExportButton />
     <MapboxVectorStylesAndLayers />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
@@ -1166,7 +1169,19 @@
             <run fontcolor='#ffffff' fontname='Tableau Bold' fontsize='22'>Safety Ground Ops &amp; Audit Engine</run>
           </formatted-text>
         </zone>
-        <zone forceUpdate='' h='33250' id='16' type-v2='web' w='33281' x='44922' y='4500' />
+        <zone h='6500' id='16' type-v2='dashboard-object' w='12813' x='44688' y='5625'>
+          <button action='' button-click-action-metadata='pdf' button-type='text'>
+            <export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{70C8955B-B0C0-4E99-9FD6-CA687DA5882A}&quot;</export-button-action>
+            <button-visual-state>
+              <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+            </button-visual-state>
+          </button>
+        </zone>
+        <zone forceUpdate='true' h='6125' id='17' type-v2='text' w='35391' x='67969' y='5625'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#ffffff' fontname='Tableau Bold' fontsize='20'>By David Namgung</run>
+          </formatted-text>
+        </zone>
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
@@ -1439,7 +1454,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='16' />
+      <active id='-1' />
       <simple-id uuid='{58D251AD-D009-45BC-B9E8-E45AC49B21CD}' />
     </window>
   </windows>
