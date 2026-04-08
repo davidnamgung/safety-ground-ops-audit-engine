@@ -4,6 +4,11 @@ subtitle: "Full-Stack Data Analysis and Data Engineering: Python Ingestion, SQL 
 author: "David Namgung"
 date: today
 format:
+  pdf:
+    toc: true
+    colorlinks: true
+    geometry:
+      - margin=1in
   html:
     # --- Aesthetics & Typography ---
     theme: cosmo
@@ -30,6 +35,8 @@ execute:
   warning: false
   message: false
 ---
+
+[Click here to view the full interactive web version of this report](https://davidnamgung.github.io/safety-ground-ops-audit-engine/report/index.html)
 
 <style>
 .nav-tabs .nav-link.active {
