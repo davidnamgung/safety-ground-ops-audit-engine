@@ -1,5 +1,7 @@
 # Safety Groud Ops and Audit Engine
 
+[![View Full Data Report](https://img.shields.io/badge/View_Full_Data_Report-2C3E50?style=for-the-badge&logo=quarto&logoColor=white)](https://davidnamgung.github.io/safety-ground-ops-audit-engine/report/index.html)
+
 ## 📌 Executive Summary
 In global aviation, ground operations (turnarounds) are high-risk environments where minutes of delay translate to millions in losses, and safety errors translate to lives. 
 
