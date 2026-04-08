@@ -213,7 +213,7 @@ After initial data profiling, I utilized Common Table Expressions (CTEs) to tran
 
 ### Key Operations
 
-* Feature Engineering: Turnaround variance and on-time status.
+* Feature Engineering: Turnaround variance and boolean on-time status.
 
 * String Normalization: Trimming and casing codes (e.g., yul  $\rightarrow$ YUL).
 
