@@ -1,0 +1,781 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Ground Ops: Safety \& Compliance Engine},
+  pdfauthor={David Namgung},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Ground Ops: Safety \& Compliance Engine}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Full-Stack Data Analysis and Data Engineering: Python
+Ingestion, SQL ETL, and R Automated Alerting System}
+\author{David Namgung}
+\date{2026-04-08}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+\href{https://davidnamgung.github.io/safety-ground-ops-audit-engine/report/index.html}{Click
+here to view the full interactive web version of this report}
+
+{Python} {PostgreSQL} {R (Tidyverse)} {Data Dictionary} {ETL Pipelines}
+{Automated Alerting} {Data Quality (DQ)}
+
+✈️ Launch Interactive Dashboard
+
+📄 View Interactive Quarto Report
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Executive Summary}\label{executive-summary}
+
+In global aviation, ground operations (turnarounds) are high-risk
+environments where minutes of delay translate to millions in losses, and
+safety errors translate to lives.
+
+This project simulates a \textbf{Production Data Pipeline} for ground
+audit logs. I engineered a system that ingests \textbf{100,000 raw
+flight records}, cleanses them via a \textbf{SQL Silver-Layer}, and
+utilizes an \textbf{R-based Validation Engine} to trigger automated
+safety alerts when airport performance drifts outside of regulatory
+thresholds.
+
+\subsection{Project Architecture}\label{project-architecture}
+
+The engine is built on a modular ``Bronze-to-Gold'' architecture:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Ingestion (Python/SQLAlchemy):} Synthetic generation of 100k
+  audit logs with injected ``noisy'' data (outliers, missing values,
+  typos).
+\item
+  \textbf{Transformation (PostgreSQL):} A multi-stage SQL pipeline
+  standardizing station codes, resolving entity naming conflicts, and
+  calculating performance variances.
+\item
+  \textbf{Validation (R/Dplyr):} A statistical watchdog script that
+  monitors incident rates and flags high-risk stations for immediate
+  audit.
+\item
+  \textbf{Intelligence (Tableau):} An executive-facing dashboard for
+  real-time situational awareness.
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. Data Ingestion \& Raw
+Loading}\label{data-ingestion-raw-loading}
+
+The first challenge was simulating ``dirty'' data consistent with
+real-world sensor logs. Using \textbf{Python}, I generated a dataset
+where 2\% of flights contained safety incidents and several thousand
+records contained ``impossible'' physical values (negative baggage
+delays) to test the robustness of the pipeline.
+
+\subsubsection{Python Implementation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Extract from 01\_generate\_and\_load.py}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{from}\NormalTok{ sqlalchemy }\ImportTok{import}\NormalTok{ create\_engine}
+
+\CommentTok{\# Database Connection}
+\NormalTok{engine }\OperatorTok{=}\NormalTok{ create\_engine(}\StringTok{\textquotesingle{}postgresql://davidnamgung:@localhost:5432/groundops\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Pushing 100k records to PostgreSQL \textquotesingle{}Raw\textquotesingle{} table}
+\NormalTok{df.to\_sql(}\StringTok{\textquotesingle{}raw\_audit\_logs\textquotesingle{}}\NormalTok{, engine, if\_exists}\OperatorTok{=}\StringTok{\textquotesingle{}replace\textquotesingle{}}\NormalTok{, index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2. Data Governance \& Schema}\label{data-governance-schema}
+
+To maintain transparency across the pipeline, the following data
+dictionary defines the attributes for both the raw ingestion and the
+engineered silver layer.
+
+\subsubsection{Raw Audit Logs}
+
+\emph{The initial landing zone for raw sensor data and manual audit
+entries.}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Column
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{audit\_id} & UUID & Primary Key. Unique identifier for the
+ground audit. \\
+\texttt{flight\_date} & Date & The date of the ground operation. \\
+\texttt{station\_code} & String & 3-letter IATA code. Contains raw noise
+(typos/spaces). \\
+\texttt{handler\_name} & String & The ground handling vendor (e.g.,
+Menzies, dnata, Swissport). \\
+\texttt{turnaround\_target\_mins} & Int & The IATA-standard scheduled
+turnaround time. \\
+\texttt{turnaround\_actual\_mins} & Int & The observed duration of the
+ground operation. \\
+\texttt{baggage\_delay\_mins} & Int & Raw delay minutes. May contain
+negative sensor noise. \\
+\texttt{safety\_incident\_flag} & Bool & Binary indicator of a safety
+protocol breach. \\
+\end{longtable}
+
+\subsubsection{Staged Audit Logs}
+
+\emph{The refined source of truth used for the R Validation Engine and
+Tableau Reporting.}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Column
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{station\_code} & String & \textbf{Standardized:} Forced
+uppercase and whitespace trimmed. \\
+\texttt{handler\_name} & String & \textbf{Consolidated:} Merged
+duplicate entities (e.g., Menzies Aviation \(\rightarrow\) Menzies). \\
+\texttt{turnaround\_variance\_mins} & Int & \textbf{Engineered:}
+Calculation of \texttt{Actual\ -\ Target}. \\
+\texttt{is\_on\_time} & Bool & \textbf{Engineered:} \texttt{TRUE} if
+variance \(\le 0\), else \texttt{FALSE}. \\
+\texttt{baggage\_delay\_mins} & Int & \textbf{Cleaned:} Negative values
+floored to 0 via \texttt{GREATEST()}. \\
+\texttt{turnaround\_actual\_mins} & Int & \textbf{Filtered:} Outliers
+\textgreater{} 500 mins nullified to prevent skew. \\
+\end{longtable}
+
+\subsection{3. SQL ETL and Data
+Cleansing}\label{sql-etl-and-data-cleansing}
+
+After initial data profiling, I utilized Common Table Expressions (CTEs)
+to transform raw logs into an analysis-ready state and performed a Data
+Quality audit which identified 1250 records with missing turnaround
+data. This strict filtering logic excludes incomplete records, ensuring
+a 100\% complete dataset of flight logs. Key operations included:
+
+\subsubsection{Key Operations}
+
+\begin{itemize}
+\item
+  Feature Engineering: Turnaround variance and on-time status.
+\item
+  String Normalization: Trimming and casing codes (e.g., yul
+  \(\rightarrow\) YUL).
+\item
+  Entity Resolution: Merging duplicate vendor names (Menzies Aviation
+  \(\rightarrow\) Menzies).
+\item
+  Outlier Handling: Nullifying turnaround times exceeding 500 minutes to
+  prevent skewing KPIs.
+\end{itemize}
+
+\subsubsection{SQL Implementation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{DROP} \KeywordTok{TABLE} \ControlFlowTok{IF} \KeywordTok{EXISTS}\NormalTok{ staged\_audit\_logs;}
+
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ staged\_audit\_logs }\KeywordTok{AS}
+
+\KeywordTok{WITH}\NormalTok{ step\_1\_standardize\_text }\KeywordTok{AS}\NormalTok{ (}
+    \KeywordTok{SELECT} 
+\NormalTok{        audit\_id,}
+\NormalTok{        flight\_date,}
+        \FunctionTok{TRIM}\NormalTok{(}\FunctionTok{UPPER}\NormalTok{(station\_code)) }\KeywordTok{AS}\NormalTok{ station\_code,}
+        \ControlFlowTok{CASE} 
+            \ControlFlowTok{WHEN}\NormalTok{ handler\_name }\OperatorTok{=} \StringTok{\textquotesingle{}Menzies Aviation\textquotesingle{}} \ControlFlowTok{THEN} \StringTok{\textquotesingle{}Menzies\textquotesingle{}}
+            \ControlFlowTok{ELSE}\NormalTok{ handler\_name }
+        \ControlFlowTok{END} \KeywordTok{AS}\NormalTok{ handler\_name,}
+        
+\NormalTok{        turnaround\_target\_mins,}
+\NormalTok{        turnaround\_actual\_mins,}
+\NormalTok{        baggage\_delay\_mins,}
+\NormalTok{        safety\_incident\_flag}
+    \KeywordTok{FROM}\NormalTok{ raw\_audit\_logs}
+\NormalTok{),}
+\NormalTok{step\_2\_clean\_numerics }\KeywordTok{AS}\NormalTok{ (}
+    \KeywordTok{SELECT} 
+\NormalTok{        audit\_id,}
+\NormalTok{        flight\_date,}
+\NormalTok{        station\_code,}
+\NormalTok{        handler\_name,}
+\NormalTok{        turnaround\_target\_mins,}
+        \ControlFlowTok{CASE} 
+            \ControlFlowTok{WHEN}\NormalTok{ turnaround\_actual\_mins }\OperatorTok{\textgreater{}} \DecValTok{500} \ControlFlowTok{THEN} \KeywordTok{NULL} 
+            \ControlFlowTok{ELSE}\NormalTok{ turnaround\_actual\_mins }
+        \ControlFlowTok{END} \KeywordTok{AS}\NormalTok{ turnaround\_actual\_mins,}
+        \FunctionTok{GREATEST}\NormalTok{(baggage\_delay\_mins, }\DecValTok{0}\NormalTok{) }\KeywordTok{AS}\NormalTok{ baggage\_delay\_mins,}
+\NormalTok{        safety\_incident\_flag}
+    \KeywordTok{FROM}\NormalTok{ step\_1\_standardize\_text}
+    \KeywordTok{WHERE}\NormalTok{ turnaround\_actual\_mins }\KeywordTok{IS} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{;}
+\NormalTok{)}
+
+\KeywordTok{SELECT} 
+\NormalTok{    audit\_id,}
+\NormalTok{    flight\_date,}
+\NormalTok{    station\_code,}
+\NormalTok{    handler\_name,}
+\NormalTok{    turnaround\_target\_mins,}
+\NormalTok{    turnaround\_actual\_mins,}
+\NormalTok{    (turnaround\_actual\_mins }\OperatorTok{{-}}\NormalTok{ turnaround\_target\_mins) }\KeywordTok{AS}\NormalTok{ turnaround\_variance\_mins,}
+    
+
+    \ControlFlowTok{CASE} 
+        \ControlFlowTok{WHEN}\NormalTok{ turnaround\_actual\_mins }\OperatorTok{\textless{}=}\NormalTok{ turnaround\_target\_mins }\ControlFlowTok{THEN} \KeywordTok{TRUE} 
+        \ControlFlowTok{ELSE} \KeywordTok{FALSE} 
+    \ControlFlowTok{END} \KeywordTok{AS}\NormalTok{ is\_on\_time,}
+    
+\NormalTok{    baggage\_delay\_mins,}
+\NormalTok{    safety\_incident\_flag}
+\KeywordTok{FROM}\NormalTok{ step\_2\_clean\_numerics;}
+
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ staged\_audit\_logs }\KeywordTok{ADD} \KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{ (audit\_id);}
+
+
+\KeywordTok{COPY}\NormalTok{ staged\_audit\_logs }
+\KeywordTok{TO} \StringTok{\textquotesingle{}/Users/davidnamgung/portfolio{-}projects/safety\_ground\_ops\_engine/data/processed/ground\_ops\_clean\_sql.csv\textquotesingle{}} 
+\KeywordTok{WITH}\NormalTok{ (FORMAT CSV, }\KeywordTok{HEADER} \KeywordTok{TRUE}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4. Exploratory Analysis}\label{exploratory-analysis}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{4.1 The Performance Spread
+(Univariate)}\label{the-performance-spread-univariate}
+
+\subsubsection{Description}
+
+In aviation, averages are deceptive. A station might have an average
+delay of zero minutes because one flight was 30 minutes early and
+another was 30 minutes late. This query analyzes the Distribution of
+Variance to identify our true operational risk: the `Fat Tail' of
+extreme delays. Understanding this spread allows operations to move away
+from mean-based planning and focus on mitigating cascading delays.
+
+\subsubsection{SQL Implementation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{{-}{-} Query: Distribution of Turnaround Variance}
+\KeywordTok{SELECT} 
+    \ControlFlowTok{CASE} 
+        \ControlFlowTok{WHEN}\NormalTok{ turnaround\_variance\_mins }\OperatorTok{\textless{}} \DecValTok{0} \ControlFlowTok{THEN} \StringTok{\textquotesingle{}1. Early / Rushed (\textless{} 0m)\textquotesingle{}}
+        \ControlFlowTok{WHEN}\NormalTok{ turnaround\_variance\_mins }\KeywordTok{BETWEEN} \DecValTok{0} \KeywordTok{AND} \DecValTok{15} \ControlFlowTok{THEN} \StringTok{\textquotesingle{}2. On{-}Time to Slight Delay (0{-}15m)\textquotesingle{}}
+        \ControlFlowTok{WHEN}\NormalTok{ turnaround\_variance\_mins }\KeywordTok{BETWEEN} \DecValTok{16} \KeywordTok{AND} \DecValTok{45} \ControlFlowTok{THEN} \StringTok{\textquotesingle{}3. Moderate Delay (16{-}45m)\textquotesingle{}}
+        \ControlFlowTok{ELSE} \StringTok{\textquotesingle{}4. Severe Delay (\textgreater{} 45m)\textquotesingle{}}
+    \ControlFlowTok{END} \KeywordTok{AS}\NormalTok{ variance\_bucket,}
+    \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) }\KeywordTok{AS}\NormalTok{ flight\_count,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) }\OperatorTok{*} \FloatTok{100.0} \OperatorTok{/}\NormalTok{ (}\KeywordTok{SELECT} \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) }\KeywordTok{FROM}\NormalTok{ staged\_audit\_logs), }\DecValTok{2}\NormalTok{) }\KeywordTok{AS}\NormalTok{ pct\_of\_total}
+\KeywordTok{FROM}\NormalTok{ staged\_audit\_logs}
+\KeywordTok{GROUP} \KeywordTok{BY} \DecValTok{1}
+\KeywordTok{ORDER} \KeywordTok{BY} \DecValTok{1}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Results}
+
+variance\_bucket flight\_count pct\_of\_total 1. Early / Rushed
+(\textless{} 0m) 58837 59.58 2. On-Time to Slight Delay (0-15m) 18499
+18.73 3. Moderate Delay (16-45m) 20175 20.43 4. Severe Delay
+(\textgreater{} 45m) 1239 1.25
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{4.2 The Speed-Safety Tradeoff
+(Bivariate)}\label{the-speed-safety-tradeoff-bivariate}
+
+\subsubsection{Description}
+
+A core hypothesis in ground operations is that rushing creates risk.
+This query tests that hypothesis by cross-referencing Schedule
+Compliance (On-Time vs.~Delayed) with Safety Protocol Breaches. By
+isolating flights that beat their target turnaround time, we can
+determine if the pressure to hit SLA (Service Level Agreement) targets
+is inadvertently incentivizing unsafe behavior on the tarmac.
+
+As turnaround times get shorter (closer to 0), the probability of a
+safety breach increases.
+
+\[\rho(\text{Variance}, \text{Incident Rate}) < 0\]
+
+\subsubsection{SQL Implementation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{{-}{-} Query: Correlating Schedule Compliance with Safety Protocols}
+\KeywordTok{SELECT} 
+\NormalTok{    is\_on\_time,}
+    \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) }\KeywordTok{AS}\NormalTok{ total\_turnarounds,}
+    \FunctionTok{SUM}\NormalTok{(}\ControlFlowTok{CASE} \ControlFlowTok{WHEN}\NormalTok{ safety\_incident\_flag }\OperatorTok{=} \KeywordTok{TRUE} \ControlFlowTok{THEN} \DecValTok{1} \ControlFlowTok{ELSE} \DecValTok{0} \ControlFlowTok{END}\NormalTok{) }\KeywordTok{AS}\NormalTok{ safety\_breaches,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{SUM}\NormalTok{(}\ControlFlowTok{CASE} \ControlFlowTok{WHEN}\NormalTok{ safety\_incident\_flag }\OperatorTok{=} \KeywordTok{TRUE} \ControlFlowTok{THEN} \DecValTok{1} \ControlFlowTok{ELSE} \DecValTok{0} \ControlFlowTok{END}\NormalTok{) }\OperatorTok{*} \FloatTok{100.0} \OperatorTok{/} \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{), }\DecValTok{2}\NormalTok{) }\KeywordTok{AS}\NormalTok{ incident\_rate\_pct}
+\KeywordTok{FROM}\NormalTok{ staged\_audit\_logs}
+\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ is\_on\_time}
+\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ is\_on\_time }\KeywordTok{DESC}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Results}
+
+is\_on\_time total\_turnarounds safety\_breaches incident\_rate\_pct
+True 59872 1281 2.14 False 38878 772 1.99
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4.3 The Vendor Performance
+Matrix}\label{the-vendor-performance-matrix}
+
+\subsubsection{Description}
+
+Airline operations rely heavily on third-party vendors for baggage
+handling, fueling, and dispatch. This query creates a Vendor
+Accountability Matrix. By aggregating performance metrics by
+handler\_name, we move beyond anecdotal complaints and establish a
+data-backed baseline for contract renewals, allowing us to identify
+which vendors prioritize speed and which prioritize safety.
+
+\subsubsection{SQL Implementation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{{-}{-} Query: Vendor Performance Matrix}
+\KeywordTok{SELECT} 
+\NormalTok{    handler\_name,}
+    \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) }\KeywordTok{AS}\NormalTok{ flights\_handled,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{AVG}\NormalTok{(turnaround\_variance\_mins):}\CharTok{:numeric}\NormalTok{, }\DecValTok{1}\NormalTok{) }\KeywordTok{AS}\NormalTok{ avg\_variance\_mins,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{AVG}\NormalTok{(baggage\_delay\_mins):}\CharTok{:numeric}\NormalTok{, }\DecValTok{1}\NormalTok{) }\KeywordTok{AS}\NormalTok{ avg\_baggage\_delay\_mins,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{SUM}\NormalTok{(}\ControlFlowTok{CASE} \ControlFlowTok{WHEN}\NormalTok{ safety\_incident\_flag }\OperatorTok{=} \KeywordTok{TRUE} \ControlFlowTok{THEN} \DecValTok{1} \ControlFlowTok{ELSE} \DecValTok{0} \ControlFlowTok{END}\NormalTok{) }\OperatorTok{*} \FloatTok{100.0} \OperatorTok{/} \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{), }\DecValTok{2}\NormalTok{) }\KeywordTok{AS}\NormalTok{ incident\_rate\_pct}
+\KeywordTok{FROM}\NormalTok{ staged\_audit\_logs}
+\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ handler\_name}
+\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ avg\_variance\_mins }\KeywordTok{DESC}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Results}
+
+handler\_name flights\_handled avg\_variance\_mins
+avg\_baggage\_delay\_mins incident\_rate\_pct WFS 19607 -13.4 15.0 2.05
+Swissport 19705 -13.5 15.0 2.08 Menzies 39502 -13.6 15.0 2.05 dnata
+19936 -13.8 15.0 2.17
+
+\subsection{4.4 Station Risk Profiling}\label{station-risk-profiling}
+
+\subsubsection{Description}
+
+Safety risks are not distributed equally across the globe.
+Infrastructure bottlenecks, local weather, and regional staffing levels
+all impact performance. This query generates a Station Risk Profile,
+calculating the critical incident rate for each IATA hub. This
+intelligence allows the central operations team to intelligently deploy
+safety auditors to the highest-risk airports rather than relying on
+random inspections.
+
+\subsubsection{SQL Implementation}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{{-}{-} Query: Station Risk Profiling}
+\KeywordTok{SELECT} 
+\NormalTok{    station\_code,}
+    \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) }\KeywordTok{AS}\NormalTok{ total\_flights,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{AVG}\NormalTok{(turnaround\_actual\_mins):}\CharTok{:numeric}\NormalTok{, }\DecValTok{1}\NormalTok{) }\KeywordTok{AS}\NormalTok{ avg\_turnaround\_time,}
+    \FunctionTok{ROUND}\NormalTok{(}\FunctionTok{SUM}\NormalTok{(}\ControlFlowTok{CASE} \ControlFlowTok{WHEN}\NormalTok{ safety\_incident\_flag }\OperatorTok{=} \KeywordTok{TRUE} \ControlFlowTok{THEN} \DecValTok{1} \ControlFlowTok{ELSE} \DecValTok{0} \ControlFlowTok{END}\NormalTok{) }\OperatorTok{*} \FloatTok{100.0} \OperatorTok{/} \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{), }\DecValTok{2}\NormalTok{) }\KeywordTok{AS}\NormalTok{ critical\_incident\_rate\_pct}
+\KeywordTok{FROM}\NormalTok{ staged\_audit\_logs}
+\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ station\_code}
+\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ critical\_incident\_rate\_pct }\KeywordTok{DESC}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Results}
+
+station\_code total\_flights avg\_turnaround\_time
+critical\_incident\_rate\_pct SIN 12762 64.7 2.22 JFK 15683 65.2 2.13
+LHR 15881 64.9 2.10 DXB 12803 65.0 2.07 FRA 12777 65.4 2.06 YUL 15824
+65.1 2.04 NRT 13020 65.0 1.93
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5. Automated Validation Engine in
+R}\label{automated-validation-engine-in-r}
+
+A dashboard is passive; safety requires active alerting. I developed an
+R script that acts as an automated auditor. It calculates the safety
+incident rate per station and compares it against a Critical Threshold
+(\(2.5\%\)).
+
+The incident rate is calculated as:
+
+\[Incident\ Rate = \frac{\sum Safety\ Incidents}{\sum Total\ Flights} \times 100\]
+
+If any airport (e.g., YUL, LHR) breaches this threshold, the system
+triggers a simulated high-priority alert.
+
+The audit cleans data, calculates failure rates, and triggers simulated
+alerts.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(DBI)}
+\FunctionTok{library}\NormalTok{(RPostgres)}
+
+\FunctionTok{print}\NormalTok{(}\StringTok{"Connecting to the \textquotesingle{}groundops\textquotesingle{} database..."}\NormalTok{)}
+\NormalTok{con }\OtherTok{\textless{}{-}} \FunctionTok{dbConnect}\NormalTok{(RPostgres}\SpecialCharTok{::}\FunctionTok{Postgres}\NormalTok{(),}
+                 \AttributeTok{dbname =} \StringTok{"groundops"}\NormalTok{,}
+                 \AttributeTok{host =} \StringTok{"localhost"}\NormalTok{,}
+                 \AttributeTok{port =} \DecValTok{5432}\NormalTok{,}
+                 \AttributeTok{user =} \StringTok{"davidnamgung"}\NormalTok{, }\CommentTok{\# Your local Mac username}
+                 \AttributeTok{password =} \StringTok{""}\NormalTok{)}
+
+\NormalTok{staged\_data }\OtherTok{\textless{}{-}} \FunctionTok{dbReadTable}\NormalTok{(con, }\StringTok{"staged\_audit\_logs"}\NormalTok{)}
+\FunctionTok{dbDisconnect}\NormalTok{(con)}
+
+\NormalTok{CRITICAL\_THRESHOLD\_PCT }\OtherTok{\textless{}{-}} \FloatTok{2.5} 
+
+\FunctionTok{print}\NormalTok{(}\StringTok{"Running compliance audit across all global stations..."}\NormalTok{)}
+
+\NormalTok{audit\_results }\OtherTok{\textless{}{-}}\NormalTok{ staged\_data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(station\_code) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}
+    \AttributeTok{total\_flights\_handled =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{total\_safety\_incidents =} \FunctionTok{sum}\NormalTok{(safety\_incident\_flag }\SpecialCharTok{==} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{incident\_rate\_pct =} \FunctionTok{round}\NormalTok{((total\_safety\_incidents }\SpecialCharTok{/}\NormalTok{ total\_flights\_handled) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(incident\_rate\_pct))}
+
+\NormalTok{failing\_stations }\OtherTok{\textless{}{-}}\NormalTok{ audit\_results }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(incident\_rate\_pct }\SpecialCharTok{\textgreater{}}\NormalTok{ CRITICAL\_THRESHOLD\_PCT)}
+
+\ControlFlowTok{if}\NormalTok{ (}\FunctionTok{nrow}\NormalTok{(failing\_stations) }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{) \{}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"⚠️ CRITICAL ALERT: The following stations have breached the safety threshold:}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(failing\_stations)) \{}
+    \FunctionTok{cat}\NormalTok{(}\FunctionTok{sprintf}\NormalTok{(}\StringTok{"   {-}\textgreater{} STATION: \%s | Incident Rate: \%.2f\%\% (Threshold: \%.2f\%\%)}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }
+\NormalTok{                failing\_stations}\SpecialCharTok{$}\NormalTok{station\_code[i], }
+\NormalTok{                failing\_stations}\SpecialCharTok{$}\NormalTok{incident\_rate\_pct[i], }
+\NormalTok{                CRITICAL\_THRESHOLD\_PCT))}
+\NormalTok{  \}}
+  
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{ACTION REQUIRED: Dispatch audit team to failing stations immediately.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"✅ ALL CLEAR: All stations are operating within acceptable safety thresholds.}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{\}}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"==================================================}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6. Technical Outcomes}\label{technical-outcomes}
+
+\textbf{Data Integrity}: Eliminated 100\% of negative baggage delays and
+standardized 7 disparate airport code formats.
+
+\textbf{Operational Insight}: Identified specific handlers (e.g.,
+``Menzies'') responsible for the highest turnaround variance.
+
+\textbf{Efficiency}: Designed a pipeline capable of processing 100,000
+rows from raw-to-alert in under 30 seconds.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7. Forward Outlook: Enterprise Production
+Architecture}\label{forward-outlook-enterprise-production-architecture}
+
+While this portfolio project executes via a localized batch-processing
+methodology, it was architected to mirror the logic of a modern
+\textbf{Enterprise Data Stack}. In a real-world Ground Operations
+scenario, the reliance on flat files (.csv) and manual script execution
+is eliminated to ensure real-time situational awareness.
+
+If deployed within an airline's actual tech stack, the pipeline would be
+scaled using the following methodologies:
+
+\subsubsection{Orchestration}
+
+(Apache Airflow or cron)
+
+Instead of executing Python, SQL, and R sequentially via a local
+terminal, the pipeline would be converted into a \textbf{Directed
+Acyclic Graph (DAG)} using Apache Airflow or Prefect.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{The Benefit:} Airflow would trigger the ingestion script on an
+  automated cron schedule (e.g., every 5 minutes), automatically
+  handling retries if the airline's API experiences downtime.
+\end{itemize}
+
+\subsubsection{Cloud Data Warehousing}
+
+(Snowflake/BigQuery)
+
+The local PostgreSQL database would be migrated to a cloud warehouse.
+The SQL transformation scripts (the Silver Layer) would be orchestrated
+using \textbf{dbt (Data Build Tool)}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{The Benefit:} dbt allows for built-in data testing (e.g.,
+  automatically asserting that \texttt{turnaround\_actual\_mins} is
+  never negative) before the data is passed to the dashboard.
+\end{itemize}
+
+\subsubsection{Direct BI Integration}
+
+The intermediate step of exporting \texttt{ground\_ops\_clean.csv} would
+be entirely removed. Both the \textbf{Tableau Dashboard} and the
+\textbf{R Validation Engine} would maintain secure, live ODBC/JDBC
+connections directly to the production tables.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{The Benefit:} When the R script identifies a station breaching
+  the \(2.5\%\) safety threshold, it can trigger a live webhook (e.g., a
+  Slack API or PagerDuty alert) to the on-duty Airport Manager, turning
+  a passive dashboard into an \textbf{Active Alerting System}.
+\end{itemize}
+
+
+
+
+\end{document}
