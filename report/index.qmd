@@ -132,8 +132,8 @@ execute:
 </div>
 
 <div style="text-align: center;">
-  <a href="https://davidnamgung.github.io/safety-ground-ops-audit-engine/report/index.html" class="btn-pdf" download>
-    📄 View Interactive Quarto Report 
+  <a href="https://patient-meadow-987.linkyhost.com" class="btn-pdf" download>
+    📄 View Quick PDF Report
   </a>
 </div>
 
