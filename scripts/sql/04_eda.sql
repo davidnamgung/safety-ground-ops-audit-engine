@@ -1,5 +1,6 @@
 
 -- Query: Distribution of Turnaround Variance
+
 SELECT 
     CASE 
         WHEN turnaround_variance_mins < 0 THEN '1. Early / Rushed (< 0m)'
@@ -12,7 +13,6 @@ SELECT
 FROM staged_audit_logs
 GROUP BY 1
 ORDER BY 1;
-
 
 -- Query: Correlating Schedule Compliance with Safety Protocols
 SELECT 
@@ -48,3 +48,7 @@ SELECT
 FROM staged_audit_logs
 GROUP BY station_code
 ORDER BY critical_incident_rate_pct DESC;
+
+
+SELECT COUNT(*)
+FROM staged_audit_logs;

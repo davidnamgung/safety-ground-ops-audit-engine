@@ -1,8 +1,6 @@
--- ==============================================================================
--- PHASE 2: DATA CLEANSING & TRANSFORMATION PIPELINE
+-- DATA CLEANSING & TRANSFORMATION PIPELINE
 -- Objective: Standardize text, fix physical impossibilities, and handle outliers.
--- Output: A clean table named 'staged_audit_logs'
--- ==============================================================================
+-- Output: A clean table named 'staged_audit_logs
 
 -- Drop the table if we need to re-run the pipeline
 DROP TABLE IF EXISTS staged_audit_logs;
@@ -54,7 +52,6 @@ step_2_clean_numerics AS (
         -- Baggage Delays: A bag cannot arrive before the plane lands. 
         -- GREATEST() forces any negative number to become exactly 0.
         GREATEST(baggage_delay_mins, 0) AS baggage_delay_mins,
-        
         safety_incident_flag
     FROM step_1_standardize_text
 )
@@ -70,7 +67,6 @@ SELECT
     handler_name,
     turnaround_target_mins,
     turnaround_actual_mins,
-    
     -- Feature Engineering: Calculate the variance from the target
     (turnaround_actual_mins - turnaround_target_mins) AS turnaround_variance_mins,
     
@@ -82,7 +78,9 @@ SELECT
     
     baggage_delay_mins,
     safety_incident_flag
-FROM step_2_clean_numerics;
+FROM step_2_clean_numerics
+-- This ensures NO blank records make it into your final dataset
+WHERE turnaround_actual_mins IS NOT NULL;
 
 -- Add a Primary Key to our new table for database integrity
 ALTER TABLE staged_audit_logs ADD PRIMARY KEY (audit_id);

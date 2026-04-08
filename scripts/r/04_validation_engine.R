@@ -59,9 +59,9 @@ if (nrow(failing_stations) > 0) {
   
   # Loop through failing stations and generate a simulated email/system alert
   for (i in 1:nrow(failing_stations)) {
-    cat(sprintf("   -> STATION: %s | Incident Rate: %.2f%% (Threshold: %.2f%%)\n", 
-                failing_stations$station_code[i], 
-                failing_stations$incident_rate_pct[i], 
+    cat(sprintf("   -> STATION: %s | Incident Rate: %.2f%% (Threshold: %.2f%%)\n",
+                failing_stations$station_code[i],
+                failing_stations$incident_rate_pct[i],
                 CRITICAL_THRESHOLD_PCT))
   }
   
